@@ -10,12 +10,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-find_package(PkgConfig)
-pkg_check_modules(SERIAL REQUIRED libserial)
-
 set(TARGET ${PROJECT_NAME})
 add_executable(${TARGET})
 target_sources(${TARGET} PUBLIC src/main.cpp src/usart.cpp)
-target_link_libraries(${TARGET} ${SERIAL_LIBRARIES})
-target_include_directories(${TARGET} PUBLIC include/${PROJECT_NAME}
-                                            ${SERIAL_INCLUDE_DIRS})
+target_include_directories(${TARGET} PUBLIC include/${PROJECT_NAME})
