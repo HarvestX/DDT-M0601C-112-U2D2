@@ -1,3 +1,7 @@
 {
+  "files.associations": {
+    "memory": "cpp",
+    "array": "cpp"
+  },
   "ros.distro": "foxy"
 }
